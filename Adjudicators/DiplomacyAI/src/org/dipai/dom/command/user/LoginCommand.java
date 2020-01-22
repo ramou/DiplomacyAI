@@ -11,10 +11,10 @@ import org.dsrg.soenea.domain.user.mapper.UserInputMapper;
 public class LoginCommand extends ValidatorCommand {
 
 	@Source
-	public String user;
+	public String username;
 	
 	@Source
-	public String pass;
+	public String password;
 	
 	@SetInRequestAttribute
 	public IUser CurrentUser;
@@ -26,7 +26,7 @@ public class LoginCommand extends ValidatorCommand {
 	@Override
 	public void process() throws CommandException {
 		try {
-			CurrentUser = UserInputMapper.find(user, pass);
+			CurrentUser = UserInputMapper.find(username, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 			addNotification(e.getMessage());
