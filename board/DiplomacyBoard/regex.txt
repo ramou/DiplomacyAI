@@ -1,0 +1,35 @@
+Regex used to convert stuff from Diplomacy.svg into a more workable format:
+.*title="([^"]*)"[^<]*.*?class="(.)" points="([^"]*)"[^<]*.*?x="([^"]*)" y="([^"]*)">([^<]*)</text>[^<]*</g>
+title: "\1", pieces: [{class: "\2", path: "\3"}], short: "\6", label: {x: \4, y: \5}
+
+
+.*title="([^"]*)"[^<]*.*?class="(.)" d="([^"]*)"[^<]*.*?x="([^"]*)" y="([^"]*)">([^<]*)</text>[^<]*</g>
+title: "\1", pieces: [{class: "\2", path: "\3"}], short: "\6", label: {x: \4, y: \5}
+
+
+.*title="([^"]*)"[^<]*.*?class="(.)" d="([^"]*)"[^<]*.*?class="(.)" d="([^"]*)"[^<]*.*?x="([^"]*)" y="([^"]*)">([^<]*)</text>[^<]*</g>
+title: "\1", pieces: [{class: "\2", path: "\3"},{class: "\4", path: "\5"}], short: "\8", label: {x: \6, y: \7}
+
+
+(polygon class="." points=")([0-9]*,[0-9]*)
+\1M\2
+
+(polygon class="." points=".* )([0-9]*,[0-9]*)
+\1L\2
+
+(polygon class="." points=".*)"
+\1\2 Z"
+
+polygon class="(.)" points="
+path class="\1" d="
+
+
+
+(polyline class="." points=")([0-9]*,[0-9]*)
+\1M\2
+
+(polyline class="." points=".* )([0-9]*,[0-9]*)
+\1L\2
+
+polyline class="(.)" points="
+path class="\1" d="
