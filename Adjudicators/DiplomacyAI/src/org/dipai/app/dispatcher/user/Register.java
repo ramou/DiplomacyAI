@@ -30,6 +30,7 @@ public class Register extends Dispatcher {
 			}
 			
 		} catch (CommandException e) {
+			e.printStackTrace();
 			forward("/WEB-INF/jsp/fail.jsp");
 		}
 	}

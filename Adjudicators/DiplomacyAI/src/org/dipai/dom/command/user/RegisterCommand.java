@@ -19,10 +19,10 @@ import org.dsrg.soenea.domain.user.mapper.UserInputMapper;
 public class RegisterCommand extends ValidatorCommand {
 
 	@Source
-	public String user;
+	public String username;
 	
 	@Source
-	public String pass;
+	public String password;
 	
 	@SetInRequestAttribute
 	public IUser CurrentUser;
@@ -34,9 +34,9 @@ public class RegisterCommand extends ValidatorCommand {
 	@Override
 	public void process() throws CommandException {
 		try {
-			
+			System.out.println("ARGHHH!!");
 			try{
-				CurrentUser = UserInputMapper.find(user);
+				CurrentUser = UserInputMapper.find(username);
 				String message = "User already exists!";
 				throw new CommandException(message);
 			} catch (MapperException e) {}
@@ -45,7 +45,7 @@ public class RegisterCommand extends ValidatorCommand {
 			//roles.add(new GuestRole());
 			roles.add(new RegisteredRole());
 
-			CurrentUser = UserFactory.createNew(user, pass, roles);			
+			CurrentUser = UserFactory.createNew(username, password, roles);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			addNotification(e.getMessage());

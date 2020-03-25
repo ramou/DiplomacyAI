@@ -20,7 +20,7 @@ import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
 public class TestSuite {
-	public static String URL_BASE = "http://localhost:8080/poke/";
+	public static String URL_BASE = "http://localhost:8080/DiplomacyAI/";
 
 	final static Logger testLogger = Logger.getLogger(TestSuite.class.getName());
 

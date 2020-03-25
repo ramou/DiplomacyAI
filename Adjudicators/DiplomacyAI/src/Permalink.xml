@@ -1,14 +1,14 @@
 <permalinks>
     <Permalink>
         <pattern>Dip/Player/Register</pattern>
-        <dispatcher>org.soen387.app.dispatcher.user.Register</dispatcher>
+        <dispatcher>org.dipai.app.dispatcher.user.Register</dispatcher>
     </Permalink>
     <Permalink>
         <pattern>Dip/Player/Login</pattern>
-        <dispatcher>org.soen387.app.dispatcher.user.Login</dispatcher>
+        <dispatcher>org.dipai.app.dispatcher.user.Login</dispatcher>
     </Permalink>
     <Permalink>
         <pattern>Dip/Player/Logout</pattern>
-        <dispatcher>org.soen387.app.dispatcher.user.Logout</dispatcher>
+        <dispatcher>org.dipai.app.dispatcher.user.Logout</dispatcher>
     </Permalink>
 </permalinks>
