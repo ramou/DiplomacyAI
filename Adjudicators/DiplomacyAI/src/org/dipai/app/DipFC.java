@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.dipai.dom.model.game.Game;
+import org.dipai.dom.model.game.mapper.GameOutputMapper;
 import org.dsrg.soenea.application.servlet.dispatcher.Dispatcher;
 import org.dsrg.soenea.application.servlet.dispatcher.HttpServletHelper;
 import org.dsrg.soenea.application.servlet.impl.AuthorizationException;
@@ -49,6 +51,7 @@ public class DipFC extends SmartDispatcherServlet {
 	 public static void setupUoW() {
 		 MapperFactory myDomain2MapperMapper = new MapperFactory();
 		 myDomain2MapperMapper.addMapping(User.class, UserOutputMapper.class);
+		 myDomain2MapperMapper.addMapping(Game.class, GameOutputMapper.class);
 		 
 		 //TODO: Add other mappings
 		 
