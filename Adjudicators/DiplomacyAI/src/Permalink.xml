@@ -11,4 +11,8 @@
         <pattern>Dip/Player/Logout</pattern>
         <dispatcher>org.dipai.app.dispatcher.user.Logout</dispatcher>
     </Permalink>
+    <Permalink>
+        <pattern>Dip/Game/Create</pattern>
+        <dispatcher>org.dipai.app.dispatcher.game.Create</dispatcher>
+    </Permalink>
 </permalinks>

@@ -45,6 +45,9 @@ public class DipFC extends SmartDispatcherServlet {
 	@Override
 	public void init(final ServletConfig config) throws ServletException {
 	    super.init(config);
+	    this.
+	    getServletContext().setAttribute("PROVINCES_URL_DEFINITION", "https://raw.githubusercontent.com/ramou/DiplomacyAI/master/province.txt");
+	    getServletContext().setAttribute("COUNTRIES_DEFINITION", new String[] {"italy", "france", "austria", "germany", "england", "turkey", "russia"});
 		setupUoW();
 	}
 	

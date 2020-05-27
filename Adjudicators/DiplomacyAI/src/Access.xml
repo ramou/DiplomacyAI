@@ -2,8 +2,9 @@
 <role name="org.dsrg.soenea.domain.role.impl.GuestRole">
  <command name="org.dipai.app.dispatcher.user.Login" post="true" />
  <command name="org.dipai.app.dispatcher.user.Register" post="true" />
+ <command name="org.dipai.app.dispatcher.game.Create" post="true" get="true"/>
 </role> 
 <role name="org.dipai.dom.model.role.RegisteredRole">
 <command name="org.dipai.app.dispatcher.user.Logout" post="true" />
-</role> 
+</role>  
 </roles>
